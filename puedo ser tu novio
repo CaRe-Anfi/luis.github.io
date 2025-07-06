@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Puedo ser tu novio?</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      text-align: center;
+      padding-top: 5%;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 3em;
+      color: #ff3366;
+      margin-bottom: 30px;
+    }
+    .btn {
+      font-size: 1.5em;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 15px;
+      margin: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .btn-si {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .btn-no {
+      background-color: #f44336;
+      color: white;
+      position: absolute;
+    }
+    .happy {
+      display: none;
+      font-size: 2em;
+      color: #ff66cc;
+      margin-top: 40px;
+    }
+    .sticker {
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      z-index: -1;
+    }
+    .sticker1 { top: 10px; left: 10px; }
+    .sticker2 { top: 10px; right: 10px; }
+    .sticker3 { bottom: 10px; left: 10px; }
+    .sticker4 { bottom: 10px; right: 10px; }
+    .sticker5 { top: 50%; left: -30px; transform: translateY(-50%); }
+    .sticker6 { top: 50%; right: -30px; transform: translateY(-50%); }
+  </style>
+</head>
+<body>
+  <img src="https://i.imgur.com/Sb3pHRx.png" class="sticker sticker1" alt="Sticker 1">
+  <img src="https://i.imgur.com/x7F5V7J.png" class="sticker sticker2" alt="Sticker 2">
+  <img src="https://i.imgur.com/TUgG7Zl.png" class="sticker sticker3" alt="Sticker 3">
+  <img src="https://i.imgur.com/BDH9i8z.png" class="sticker sticker4" alt="Sticker 4">
+  <img src="https://i.imgur.com/ysDbjUC.png" class="sticker sticker5" alt="Sticker 5">
+  <img src="https://i.imgur.com/f9AhLBE.png" class="sticker sticker6" alt="Sticker 6">
+
+  <h1>¿Puedo ser tu novio?</h1>
+  <button class="btn btn-si" onclick="responderSi()">Sí 💖</button>
+  <button class="btn btn-no" id="noBtn" onmouseover="moverBoton()">No 💔</button>
+  <div class="happy" id="respuestaFeliz">¡Yujuuu! 💘 ¡Soy muy feliz ahora!</div>
+
+  <script>
+    function responderSi() {
+      document.getElementById('respuestaFeliz').style.display = 'block';
+    }
+
+    function moverBoton() {
+      const btn = document.getElementById('noBtn');
+      const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+      const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+      btn.style.left = `${x}px`;
+      btn.style.top = `${y}px`;
+    }
+  </script>
+</body>
+</html>
+
